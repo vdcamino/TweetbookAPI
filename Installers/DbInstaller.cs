@@ -5,7 +5,7 @@ namespace TweetbookAPI.Installers
 {
     public class DbInstaller : IInstaller
     {
-        public void InstallServices(IConfiguration configuration, IServiceCollection services)
+        public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<DataContext>(options => options.UseNpgsql(configuration.GetConnectionString("PostgreSQLServer")));
         }

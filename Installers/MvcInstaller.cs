@@ -2,7 +2,7 @@
 {
     public class MvcInstaller : IInstaller
     {
-        public void InstallServices(IConfiguration configuration, IServiceCollection services)
+        public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddMvc();
             services.AddSwaggerGen();

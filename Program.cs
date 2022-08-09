@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Web;
 using TweetbookAPI.Data;
 using TweetbookAPI.Services;
+using TweetbookAPI.Installers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IPostService, PostService>();
+builder.Services.InstallServicesInAssembly(builder.Configuration);
 
 var app = builder.Build();
 
